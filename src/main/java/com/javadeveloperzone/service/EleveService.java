@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class EleveService {
+public class EleveService  {
     @Autowired
     private EleveRepository eleveRepository;
 
@@ -27,5 +27,10 @@ public class EleveService {
 
     public List<Eleve> getAll(){
         return eleveRepository.findAll();
+    }
+
+    public boolean delete(String id){
+         eleveRepository.deleteById(id);
+         return true;
     }
 }
